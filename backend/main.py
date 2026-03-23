@@ -1,6 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import nltk
+import os
+
+# Download NLTK data at startup
+nltk.data.path.append('/opt/render/nltk_data')
+nltk.download('stopwords', download_dir='/opt/render/nltk_data', quiet=True)
+
 from database import SessionLocal, EmailLog
 from model.predict import predict
 import json
