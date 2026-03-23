@@ -14,7 +14,9 @@ import json
 
 app = FastAPI(title="Spam Classifier API")
 app.add_middleware(CORSMiddleware,
-    allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"])
 
 class EmailIn(BaseModel):
     sender: str = ""
