@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from backend.database import SessionLocal, EmailLog
-from backend.model.predict import predict
+from database import SessionLocal, EmailLog
+from model.predict import predict
 import json
 
 app = FastAPI(title="Spam Classifier API")
